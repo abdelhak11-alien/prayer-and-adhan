@@ -221,9 +221,6 @@ footer{margin-top:28px;border-top:3px double var(--line);padding-top:14px;displa
 <section aria-labelledby="hd">
   <h2 id="hd" data-i="adhan"></h2>
   <audio id="adhanAudio" controls preload="none" src="adhan.mp3"></audio>
-  <h2 style="margin-top:16px" data-i="adhanFajr"></h2>
-  <audio id="adhanFajrAudio" controls preload="none" src="adhan-fajr.mp3"></audio>
-  <p id="fajrNote" class="qnote" hidden data-i="fajrNote"></p>
   <p id="adhanNote" class="qnote" hidden data-i="adhanNote"></p>
 </section>
 
@@ -284,17 +281,17 @@ const pad=n=>String(n).padStart(2,'0');
 
 /* ---------- Languages ---------- */
 const T={
-ar:{welcome:"مرحباً بك في فضائك، حيث تزداد قرباً من الله",prayer:"أوقات الصلاة",hadith:"من أعظم الأحاديث (يتغير كل 5 دقائق)",tasbih:"عدّاد التسبيحات",adhkar:"الأذكار",openQuran:"📖 القرآن الكريم",adhan:"صوت الأذان",download:"تحميل الأذان",adhanFajr:"أذان الفجر",fajrNote:"ملف adhan-fajr.mp3 غير موجود. سيُستعمل الأذان العادي للفجر.",adhanNote:"ملف الأذان adhan.mp3 غير موجود بجانب الموقع. ضعه في نفس المجلد على GitHub.",erase:"مسح",click:"اضغط",times:["الفجر","الشروق","الظهر","العصر","المغرب","العشاء"],tabs:["أذكار الصباح","أذكار المساء","أذكار الاستيقاظ","أذكار النوم"],
+ar:{welcome:"مرحباً بك في فضائك، حيث تزداد قرباً من الله",prayer:"أوقات الصلاة",hadith:"من أعظم الأحاديث (يتغير كل 5 دقائق)",tasbih:"عدّاد التسبيحات",adhkar:"الأذكار",openQuran:"📖 القرآن الكريم",adhan:"صوت الأذان",download:"تحميل الأذان",adhanNote:"ملف الأذان adhan.mp3 غير موجود بجانب الموقع. ضعه في نفس المجلد على GitHub.",erase:"مسح",click:"اضغط",times:["الفجر","الشروق","الظهر","العصر","المغرب","العشاء"],tabs:["أذكار الصباح","أذكار المساء","أذكار الاستيقاظ","أذكار النوم"],
 install:"📲 تثبيت التطبيق",iosHint:"على الآيفون: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية».",enable:"🔔 تفعيل التنبيهات والأذان",enabled:"🔔 التنبيهات مفعّلة",denied:"التنبيهات محجوبة. فعّلها من إعدادات المتصفح للموقع.",
 next:"الصلاة القادمة:",alerts:"التنبيهات",optN:"تنبيه عند كل صلاة",optA:"تشغيل الأذان عند الصلاة",optK:"تذكير بأذكار الصباح والمساء",alertNote:"التنبيهات تعمل والتطبيق مفتوح أو في الخلفية. إن أغلقته تماماً قد لا تصل على بعض الهواتف.",adjust:"ضبط الدقائق",adjustNote:"إن اختلف وقت عن جدول وزارة الأوقاف، عدّل بالدقائق (مثلاً +1 أو -1).",
 srcCalc:"الحساب محلي (يعمل بدون إنترنت) — بتوقيت جهازك",srcOnline:"المصدر: Aladhan بطريقة المغرب — بتوقيت جهازك",locFail:"تعذّر تحديد موقعك.",locFar:"أنت خارج المغرب، اختر مدينة من القائمة.",
 nPray:n=>`حان الآن وقت صلاة ${n}`,nMorning:"حان وقت أذكار الصباح",nEvening:"حان وقت أذكار المساء"},
-fr:{welcome:"Bienvenue dans ton espace, où tu seras plus proche d'ALLAH",prayer:"Horaires de prière",hadith:"Grands hadiths (change toutes les 5 min)",tasbih:"Compteur de tasbih",adhkar:"Invocations (adhkar)",openQuran:"📖 Le Saint Coran",adhan:"Voix de l'adhan",download:"Télécharger l'adhan",adhanFajr:"Adhan du Fajr",fajrNote:"adhan-fajr.mp3 est absent. L'adhan normal sera utilisé pour le Fajr.",adhanNote:"Le fichier adhan.mp3 est absent. Place-le dans le même dossier sur GitHub.",erase:"Effacer",click:"Cliquer",times:["Fajr","Lever du soleil","Dhuhr","Asr","Maghrib","Isha"],tabs:["Adhkar du matin","Adhkar du soir","Adhkar du réveil","Adhkar du coucher"],
+fr:{welcome:"Bienvenue dans ton espace, où tu seras plus proche d'ALLAH",prayer:"Horaires de prière",hadith:"Grands hadiths (change toutes les 5 min)",tasbih:"Compteur de tasbih",adhkar:"Invocations (adhkar)",openQuran:"📖 Le Saint Coran",adhan:"Voix de l'adhan",download:"Télécharger l'adhan",adhanNote:"Le fichier adhan.mp3 est absent. Place-le dans le même dossier sur GitHub.",erase:"Effacer",click:"Cliquer",times:["Fajr","Lever du soleil","Dhuhr","Asr","Maghrib","Isha"],tabs:["Adhkar du matin","Adhkar du soir","Adhkar du réveil","Adhkar du coucher"],
 install:"📲 Installer l'application",iosHint:"Sur iPhone : touche Partager puis « Sur l'écran d'accueil ».",enable:"🔔 Activer alertes et adhan",enabled:"🔔 Alertes activées",denied:"Notifications bloquées. Autorise-les dans les réglages du navigateur.",
 next:"Prochaine prière :",alerts:"Alertes",optN:"Alerte à chaque prière",optA:"Jouer l'adhan à l'heure",optK:"Rappel adhkar matin et soir",alertNote:"Les alertes fonctionnent quand l'app est ouverte ou en arrière-plan. Fermée complètement, elles peuvent ne pas arriver sur certains téléphones.",adjust:"Ajuster les minutes",adjustNote:"Si une heure diffère du calendrier du ministère des Habous, ajuste en minutes (+1 ou -1).",
 srcCalc:"Calcul local (fonctionne hors ligne) — heure de ton appareil",srcOnline:"Source : Aladhan, méthode Maroc — heure de ton appareil",locFail:"Position introuvable.",locFar:"Tu es hors du Maroc, choisis une ville dans la liste.",
 nPray:n=>`C'est l'heure de la prière de ${n}`,nMorning:"C'est l'heure des adhkar du matin",nEvening:"C'est l'heure des adhkar du soir"},
-en:{welcome:"Welcome to your space, where you will be more attached to ALLAH",prayer:"Prayer times",hadith:"Great hadiths (changes every 5 minutes)",tasbih:"Tasbih counter",adhkar:"Adhkar",openQuran:"📖 The Holy Quran",adhan:"Adhan voice",download:"Download Adhan",adhanFajr:"Fajr adhan",fajrNote:"adhan-fajr.mp3 is missing. The regular adhan will be used for Fajr.",adhanNote:"adhan.mp3 is missing. Put it in the same folder on GitHub.",erase:"Erase",click:"Click",times:["Fajr","Sunrise","Dhuhr","Asr","Maghrib","Isha"],tabs:["Morning adhkar","Evening adhkar","Waking-up adhkar","Sleep adhkar"],
+en:{welcome:"Welcome to your space, where you will be more attached to ALLAH",prayer:"Prayer times",hadith:"Great hadiths (changes every 5 minutes)",tasbih:"Tasbih counter",adhkar:"Adhkar",openQuran:"📖 The Holy Quran",adhan:"Adhan voice",download:"Download Adhan",adhanNote:"adhan.mp3 is missing. Put it in the same folder on GitHub.",erase:"Erase",click:"Click",times:["Fajr","Sunrise","Dhuhr","Asr","Maghrib","Isha"],tabs:["Morning adhkar","Evening adhkar","Waking-up adhkar","Sleep adhkar"],
 install:"📲 Install the app",iosHint:"On iPhone: tap Share, then “Add to Home Screen”.",enable:"🔔 Enable alerts and adhan",enabled:"🔔 Alerts enabled",denied:"Notifications are blocked. Allow them in the browser settings.",
 next:"Next prayer:",alerts:"Alerts",optN:"Alert at each prayer",optA:"Play the adhan at prayer time",optK:"Morning and evening adhkar reminder",alertNote:"Alerts work while the app is open or in the background. Fully closed, they may not arrive on some phones.",adjust:"Adjust minutes",adjustNote:"If a time differs from the Ministry of Habous table, adjust by minutes (+1 or -1).",
 srcCalc:"Local calculation (works offline) — your device time",srcOnline:"Source: Aladhan, Morocco method — your device time",locFail:"Could not get your location.",locFar:"You are outside Morocco, pick a city from the list.",
@@ -426,11 +423,9 @@ let lastNext=0;
 
 /* ---------- Alerts + integrated Adhan ---------- */
 const adhan=$('#adhanAudio');
-const adhanF=$('#adhanFajrAudio');let fajrOk=true;
 adhan.onerror=()=>{$('#adhanNote').hidden=false};
-adhanF.onerror=()=>{fajrOk=false;$('#fajrNote').hidden=false};
 function showBanner(msg){$('#toastTxt').textContent=msg;$('#toast').classList.add('on');clearTimeout(showBanner.t);showBanner.t=setTimeout(()=>$('#toast').classList.remove('on'),60000)}
-$('#toastX').onclick=()=>{$('#toast').classList.remove('on');[adhan,adhanF].forEach(a=>{a.pause();a.currentTime=0})};
+$('#toastX').onclick=()=>{$('#toast').classList.remove('on');adhan.pause();adhan.currentTime=0};
 function notify(title,tag){
   showBanner(title);
   if(!('Notification' in window)||Notification.permission!=='granted')return;
@@ -438,7 +433,7 @@ function notify(title,tag){
   if(navigator.serviceWorker&&navigator.serviceWorker.ready)navigator.serviceWorker.ready.then(r=>r.showNotification(title,o)).catch(()=>{try{new Notification(title,o)}catch(e){}});
   else try{new Notification(title,o)}catch(e){}
 }
-function playAdhan(i){const a=(i===0&&fajrOk)?adhanF:adhan;adhan.pause();adhanF.pause();a.currentTime=0;const p=a.play();if(p&&p.catch)p.catch(()=>{if(a===adhanF){fajrOk=false;adhan.play().catch(()=>{})}})}
+function playAdhan(){adhan.pause();adhan.currentTime=0;const p=adhan.play();if(p&&p.catch)p.catch(()=>{})}
 function events(){
   if(!todayT)return[];
   const out=[],a=addAdj(todayT),p=lp(Date.now()),dk=`${p.year}-${p.month}-${p.day}`;
@@ -458,7 +453,7 @@ function checkAlerts(){
       if(!opts.n&&!opts.a)return;
       fired[ev.k]=1;ch=true;
       if(opts.n)notify(T[lang].nPray(T[lang].times[ev.i]),ev.k);
-      if(opts.a&&late<2*6e4)playAdhan(ev.i);
+      if(opts.a&&late<2*6e4)playAdhan();
     }else{
       if(!opts.k)return;
       fired[ev.k]=1;ch=true;
@@ -473,7 +468,7 @@ function setEnableLabel(){
   $('#enable').textContent=ok?T[lang].enabled:T[lang].enable;
 }
 $('#enable').onclick=async()=>{
-  for(const a of [adhan,adhanF]){try{a.muted=true;await a.play();a.pause();a.currentTime=0}catch(e){}a.muted=false}
+  try{adhan.muted=true;await adhan.play();adhan.pause();adhan.currentTime=0}catch(e){}adhan.muted=false
   store.set('unlocked',true);
   if('Notification' in window){
     const r=await Notification.requestPermission();
