@@ -92,7 +92,7 @@ footer{margin-top:28px;border-top:3px double var(--line);padding-top:14px;displa
 #qToggle:active{transform:scale(.94)}
 #quranModal:not(.clean) #qToggle{top:calc(env(safe-area-inset-top,0px) + 52px);right:66px;width:34px;height:34px;font-size:16px}
 #quranModal .qHeader,#tools,#juzBar,#surahBar,#sheet,#qToast{font-family:system-ui,'Segoe UI',Tahoma,sans-serif}
-#quranModal button{font:inherit;color:inherit;cursor:pointer}
+:where(#quranModal) button{font:inherit;color:inherit;cursor:pointer}
 #quranModal .qHeader{display:flex;align-items:center;gap:8px;background:var(--ui);color:var(--uif);
   padding:calc(env(safe-area-inset-top,0px) + 6px) 10px 6px}
 #qClose{background:transparent;border:0;color:inherit;font-size:22px;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;padding:0}
@@ -220,7 +220,7 @@ footer{margin-top:28px;border-top:3px double var(--line);padding-top:14px;displa
 
 <section aria-labelledby="hd">
   <h2 id="hd" data-i="adhan"></h2>
-  <audio id="adhanAudio" controls preload="none" src="adhan.mp3"></audio>
+  <audio id="adhanAudio" controls controlsList="nodownload noplaybackrate" disablepictureinpicture preload="none" src="adhan.mp3" oncontextmenu="return false"></audio>
   <p id="adhanNote" class="qnote" hidden data-i="adhanNote"></p>
 </section>
 
@@ -578,7 +578,7 @@ const API_SRC   = 'https://api.alquran.cloud/v1/quran/quran-uthmani';
 const AR = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
 const esc = t => t.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const norm = t => t.replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g,'')
-                   .replace(/[\u0622\u0623\u0625\u0671]/g,'\u0627').replace(/\u0649/g,'\u064A').replace(/\u0629/g,'\u0647');
+                   .replace(/[\u0622\u0623\u0625\u0671]/g,'\u0627').replace(/\u0627/g,'').replace(/\u0649/g,'\u064A').replace(/\u0629/g,'\u0647');
 const debounce = (f,ms) => { let t; return (...a) => { clearTimeout(t); t=setTimeout(()=>f(...a),ms) } };
 
 const BG = [
@@ -615,7 +615,7 @@ async function loadData(){
 
 function stripBsm(t){
   const p = t.split(' ');
-  return norm(p.slice(0,4).join(' ')).startsWith('بسم الله الرحمن الرحيم') ? p.slice(4).join(' ') : t;
+  return norm(p.slice(0,4).join(' ')).startsWith(norm('بسم الله الرحمن الرحيم')) ? p.slice(4).join(' ') : t;
 }
 const ayText = (si,a) => { const s=Q[si], x=s.ay[a-1]; return (a===1 && s.n!==1 && s.n!==9) ? stripBsm(x.t) : x.t; };
 
