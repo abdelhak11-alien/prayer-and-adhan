@@ -2,8 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Your Space</title>
-<script src="https://cdn.jsdelivr.net/npm/mammoth@1.6.0/mammoth.browser.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Cairo:wght@400;700&display=swap">
 <style>
 :root{--bg:#f6f0e1;--card:#fffaf0;--ink:#0f3d2e;--mut:#7a7358;--hd:#0f4a3a;--hdi:#fff;--gold:#c9a227;--ok:#1f8a4c;--no:#c0392b;--ln:#e4d9b8;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1530;--card:#13244b;--ink:#f4e9c4;--mut:#9aa6c4;--hd:#0f1d40;--gold:#e6c15a;--ln:#2a3d6b;color-scheme:dark}}
@@ -94,8 +93,10 @@ html[dir=rtl] .hd>button svg{transform:scaleX(-1)}
 .ctl{display:flex;gap:6px;justify-content:space-between;margin-top:6px}.ctl .btn{padding:8px 14px;display:flex;align-items:center}
 #fb{border-color:var(--gold)!important}
 #sc{position:relative}
-#qt{font-family:Amiri,'Traditional Arabic',serif;font-size:26px;line-height:2.3;direction:rtl;text-align:justify;padding:18px 16px;color:#1b1b1b;max-width:760px;margin:0 auto;min-height:100%}
+#qt{font-family:'Scheherazade New',Amiri,'Traditional Arabic',serif;font-size:26px;line-height:2.3;direction:rtl;text-align:justify;padding:18px 16px;color:#1b1b1b;max-width:760px;margin:0 auto;min-height:100%}
 #qt h1,#qt h2,#qt h3{text-align:center;color:#0f4a3a}#qt img{max-width:100%}
+.su{margin-bottom:16px}#qt .su h2{border:2px solid #c9a227;border-radius:14px;padding:4px;margin:20px 0 8px;font-size:1.05em}
+.bs{text-align:center;margin:6px 0}.vn{color:#b08a12;font-size:.75em}
 </style></head><body>
 <div id="app"></div><div id="toast"></div>
 <div id="rd"><div class="bar"><button onclick="askExit()">Esc</button><span>“Auto save in the read page”</span><button id="fb" onclick="fs()"></button><button onclick="exitQuran()" id="xq"></button></div>
@@ -105,8 +106,8 @@ html[dir=rtl] .hd>button svg{transform:scaleX(-1)}
 <script>
 
 /* ====== SETTINGS: where your Quran Word file is (in your GitHub repo) ====== */
-const QURAN_URL='quran.docx';   // file name/path next to this HTML file (GitHub Pages)
-const QURAN_RAW='';             // OR a full link: https://raw.githubusercontent.com/USER/REPO/main/quran.docx
+const QURAN_URL='quran.json';   // your Quran file, in the same folder as index.html
+const QURAN_RAW='';             // OR a full link: https://raw.githubusercontent.com/USER/REPO/main/quran.json
 const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,'0');
 const dk=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
 const st={g(k,d){try{const v=localStorage.getItem('sp_'+k);return v?JSON.parse(v):d}catch(e){return d}},s(k,v){try{localStorage.setItem('sp_'+k,JSON.stringify(v))}catch(e){}}};
@@ -223,7 +224,8 @@ V.prayer=b=>{
 };
 /* adhan sound (plays in background while the app is open) */
 let AC;document.addEventListener('click',()=>{try{AC=AC||new AudioContext()}catch(e){}});
-function adhan(){if(!AC)return;[392,440,523,440,392,349,392].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+i*.7;o.frequency.value=f;o.connect(g);g.connect(AC.destination);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.25,t+.1);g.gain.exponentialRampToValueAtTime(.0001,t+.65);o.start(t);o.stop(t+.7)})}
+function beep(){if(!AC)return;[392,440,523,440,392,349,392].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+i*.7;o.frequency.value=f;o.connect(g);g.connect(AC.destination);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.25,t+.1);g.gain.exponentialRampToValueAtTime(.0001,t+.65);o.start(t);o.stop(t+.7)})}
+let AU=null;function adhan(){try{AU=AU||new Audio('adhan.mp3');AU.currentTime=0;AU.play().catch(beep)}catch(e){beep()}}
 let played='';setInterval(()=>{const n=Date.now(),P=prayers(new Date());for(const k of['Fajr','Dhuhr','Asr','Maghrib','Isha']){const id=dk(new Date())+k;if(n>=P[k]&&n<P[k]+60000&&AD[k]!==0&&played!==id){played=id;adhan()}}},1000);
 
 /* ---------- Adkar ---------- */
@@ -327,16 +329,18 @@ function qP(k){const q=$('#qp');let h='';
 function sf(v){v=v.toLowerCase();document.querySelectorAll('#sl button').forEach(b=>b.style.display=b.dataset.n.includes(v)||b.textContent.includes(v)?'':'none')}
 let QH=null,SURS=[],PJ=0,AS=0,AR=0,fsMode=false,sI=st.g('spi',2),svT=null;
 const SPS=[10,20,30,45,65],SC=()=>$('#sc');
-async function loadQ(){if(QH)return QH;const r=await fetch(QURAN_RAW||QURAN_URL);if(!r.ok)throw new Error(r.status);const m=await mammoth.convertToHtml({arrayBuffer:await r.arrayBuffer()});QH=m.value;return QH}
+async function loadQ(){if(QH)return QH;const r=await fetch(QURAN_RAW||QURAN_URL);if(!r.ok)throw new Error(r.status);const d=await r.json(),dg=n=>String(n).replace(/\d/g,x=>'٠١٢٣٤٥٦٧٨٩'[x]);
+ QH=d.map(s=>`<section class="su"><h2>سورة ${s.name}</h2>${s.b?'<div class="bs">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>':''}<p>${s.v.map((v,i)=>v+' <span class="vn">﴿'+dg(i+1)+'﴾</span>').join(' ')}</p></section>`).join('');return QH}
 async function frame(){const f=$('#fr');f.style.background=Q.bg;
  f.innerHTML='<div id="sc"'+(Q.night?' style="filter:invert(1) hue-rotate(180deg)"':'')+'><div id="qt" style="background:'+Q.bg+'"><p style="text-align:center;direction:ltr">…</p></div></div>';
  try{await loadQ()}catch(e){const q=$('#qt');if(q)q.innerHTML='<p style="direction:ltr;text-align:center;font:15px Cairo,sans-serif">تعذّر تحميل ملف القرآن · Impossible de charger le fichier · Could not load the Quran file<br><b>'+(QURAN_RAW||QURAN_URL)+'</b></p>';return}
- const sc=SC();if(!sc)return;$('#qt').innerHTML=QH;
- const all=[...$('#qt').querySelectorAll('h1,h2,h3,h4,p')].filter(e=>/^\s*سورة\s/.test(e.textContent)&&e.textContent.length<45);SURS=all.length===114?all:[];
+ const sc=SC();if(!sc)return;$('#qt').innerHTML=QH;SURS=[...$('#qt').querySelectorAll('.su')];
  sc.onscroll=onSc;sc.addEventListener('touchstart',stopAuto,{passive:true});
- if(PJ&&SURS.length)sc.scrollTop=SURS[PJ-1].offsetTop-8;else goPage(Q.page,false);PJ=0;prog()}
-function goPage(n,sm){const sc=SC();if(!sc)return;const mx=sc.scrollHeight-sc.clientHeight;sc.scrollTo({top:(Math.max(1,Math.min(604,n))-1)/603*mx,behavior:sm?'smooth':'auto'})}
-function onSc(){const sc=SC();if(!sc)return;const mx=sc.scrollHeight-sc.clientHeight||1,q=Math.max(1,Math.min(604,Math.round(sc.scrollTop/mx*603)+1));if(q!==Q.page){Q.page=q;clearTimeout(svT);svT=setTimeout(sv,800)}prog()}
+ if(PJ)sc.scrollTop=SURS[PJ-1].offsetTop-8;else goPage(Q.page,false);PJ=0;prog()}
+const offs=()=>SURS.map(e=>e.offsetTop);
+function pgOf(){const sc=SC(),o=offs(),y=sc.scrollTop+40;let i=0;while(i<113&&o[i+1]<=y)i++;const end=i<113?o[i+1]:$('#qt').offsetHeight,f=Math.min(1,Math.max(0,(y-o[i])/Math.max(1,end-o[i]))),a=SP[i],b=i<113?SP[i+1]:605;return Math.max(1,Math.min(604,Math.round(a+f*(b-a))))}
+function goPage(n,sm){const sc=SC();if(!sc||!SURS.length)return;n=Math.max(1,Math.min(604,n));let i=0;while(i<113&&SP[i+1]<=n)i++;const o=offs(),end=i<113?o[i+1]:$('#qt').offsetHeight,a=SP[i],b=i<113?SP[i+1]:605;sc.scrollTo({top:o[i]+(n-a)/Math.max(1,b-a)*(end-o[i])-8,behavior:sm?'smooth':'auto'})}
+function onSc(){const sc=SC();if(!sc||!SURS.length)return;const q=pgOf();if(q!==Q.page){Q.page=q;clearTimeout(svT);svT=setTimeout(sv,800)}prog()}
 function prog(){const pct=Math.round(Q.page/604*100),f=$('#fill');if(f)f.style.width=pct+'%';const t=$('#pgt');if(t)t.textContent='Page '+Q.page+' · '+pct+'%'}
 const bpl=()=>{const b=$('#bpl');if(b)b.innerHTML=ic(AS?'pause':'play',20)};
 function autoStart(){const sc=SC();if(!sc)return;stopAuto();AS=1;let l=performance.now(),pos=sc.scrollTop,ls=pos;const f=t=>{if(!AS)return;const dt=Math.min(.1,(t-l)/1000);l=t;if(Math.abs(sc.scrollTop-ls)>3)pos=sc.scrollTop;pos+=SPS[sI]*dt;sc.scrollTop=pos;ls=sc.scrollTop;if(ls>=sc.scrollHeight-sc.clientHeight-1){stopAuto();return}AR=requestAnimationFrame(f)};AR=requestAnimationFrame(f);bpl()}
