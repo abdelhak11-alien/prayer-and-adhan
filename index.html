@@ -12,91 +12,86 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,system-ui,sans-serif}
 .view{max-width:480px;margin:0 auto;padding:0 14px 40px}
 .hd{display:flex;align-items:center;gap:10px;background:var(--hd);color:var(--hdi);margin:0 -14px 14px;padding:16px 14px;border-radius:0 0 26px 26px;border-bottom:3px solid var(--gold)}
-.hd h1{font-size:19px;margin:0;flex:1}
-.hd button{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:50%;width:36px;height:36px;font-size:18px}
+.hd h1{font-size:17px;margin:0;flex:1}
+.hd button{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:50%;width:36px;height:36px;font-size:18px;cursor:pointer}
 .card{background:var(--card);border:1px solid var(--ln);border-radius:18px;padding:14px;margin:0 0 12px;box-shadow:0 2px 10px #0001}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.tile{background:var(--card);border:1.5px solid var(--gold);color:var(--ink);border-radius:20px;padding:18px 8px;font:700 15px Cairo,sans-serif;min-height:104px;opacity:0;animation:fl .6s ease forwards}
-.tile span{display:block;font-size:30px;margin-bottom:6px}
+.tile{background:var(--card);border:1.5px solid var(--gold);color:var(--ink);border-radius:20px;padding:18px 8px;font:700 15px Cairo,sans-serif;min-height:104px;opacity:0;animation:fl .6s ease forwards;cursor:pointer}
+.tile span{display:flex;justify-content:center;color:var(--gold);margin-bottom:8px;font-size:0}
 .tile.l{--x:-60px}.tile.r{--x:60px}
 @keyframes fl{from{opacity:0;transform:translate(var(--x),30px) scale(.8)}to{opacity:1;transform:none}}
-.btn{display:inline-block;background:var(--hd);color:var(--hdi);border:1.5px solid var(--gold);border-radius:14px;padding:10px 16px;font:700 14px Cairo,sans-serif}
+.btn{display:inline-block;background:var(--hd);color:var(--hdi);border:1.5px solid var(--gold);border-radius:14px;padding:10px 16px;font:700 14px Cairo,sans-serif;cursor:pointer}
 .btn.g{background:var(--gold);color:#222}
 .ar{font-family:Amiri,serif;font-size:24px;line-height:2;direction:rtl;text-align:center;margin:6px 0}
-.dh{text-align:center;min-height:300px;display:flex;flex-direction:column;justify-content:center;user-select:none}
+.dh{text-align:center;min-height:300px;display:flex;flex-direction:column;justify-content:center;user-select:none;cursor:pointer}
 .cnt{font-size:64px;font-weight:700;color:var(--gold)}
 .pr{text-align:center;color:var(--mut);margin:4px}
 .row{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid var(--ln)}
-.row>:first-child{flex:1}.row a{color:var(--gold);font-size:13px;text-decoration:underline}
-.cloud{width:48px;height:34px;border:2px solid var(--ink);border-radius:50% 50% 45% 45%;background:none;color:var(--ok);font-size:20px;font-weight:700}
+.row>:first-child{flex:1}.row a{color:var(--gold);font-size:13px;text-decoration:underline;cursor:pointer}
+.cloud{width:48px;height:34px;border:2px solid var(--ink);border-radius:50% 50% 45% 45%;background:none;color:var(--ok);font-size:20px;font-weight:700;cursor:pointer}
 .cloud.on{background:var(--ok);color:#fff;border-color:var(--ok)}
-.yn{width:36px;height:36px;border-radius:50%;border:2px solid var(--ok);background:none;color:var(--ink);font-size:17px;margin-left:6px}
+.yn{width:36px;height:36px;border-radius:50%;border:2px solid var(--ok);background:none;color:var(--ink);font-size:17px;margin-left:6px;cursor:pointer}
 .yn.y{background:var(--ok);color:#fff}.yn.n{background:var(--no);border-color:var(--no);color:#fff}
-.tabs{display:flex;gap:8px;margin-bottom:12px}.tabs button{flex:1;padding:10px;border-radius:12px;border:1.5px solid var(--gold);background:var(--card);color:var(--ink);font:700 14px Cairo}
+.tabs{display:flex;gap:8px;margin-bottom:12px}.tabs button{flex:1;padding:10px;border-radius:12px;border:1.5px solid var(--gold);background:var(--card);color:var(--ink);font:700 14px Cairo;cursor:pointer}
 .tabs .on{background:var(--gold);color:#222}
 table{width:100%;border-collapse:collapse}td{padding:9px 4px;border-bottom:1px solid var(--ln)}td:last-child{text-align:center;width:48px}
-.tg{width:34px;height:34px;border-radius:50%;border:2px solid var(--ok);background:none;color:var(--ok);font-size:17px}
+.tg{width:34px;height:34px;border-radius:50%;border:2px solid var(--ok);background:none;color:var(--ok);font-size:17px;cursor:pointer}
 .tg.off{border-color:var(--no);color:var(--no)}
 .blk{display:inline-block;width:30px;height:30px;border-radius:50%;background:#333}
 .nx{text-align:center}.nx b{font-size:26px;display:block}.nx .t{font-size:38px;font-weight:700;color:var(--gold);letter-spacing:1px}
-.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px}.chip{flex:none;border:1.5px solid var(--gold);background:var(--card);color:var(--ink);border-radius:20px;padding:7px 14px;font:14px Cairo}.chip.on{background:var(--gold);color:#222}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px}.chip{flex:none;border:1.5px solid var(--gold);background:var(--card);color:var(--ink);border-radius:20px;padding:7px 14px;font:14px Cairo;cursor:pointer}.chip.on{background:var(--gold);color:#222}
 .tb{position:relative;height:340px;border:2px solid var(--ln);border-radius:20px;background:var(--card);margin-bottom:12px}
-.tb .cr{position:absolute;width:84px;height:84px;border-radius:50%;border:2px solid var(--gold);background:none;color:var(--ink);font:700 13px Cairo}
-.cc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:190px;height:190px;border-radius:50%;border:4px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:56px;font-weight:700;user-select:none;background:radial-gradient(var(--card),var(--ln))}
+.tb .cr{position:absolute;width:84px;height:84px;border-radius:50%;border:2px solid var(--gold);background:none;color:var(--ink);font:700 13px Cairo;cursor:pointer}
+.cc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:190px;height:190px;border-radius:50%;border:4px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:56px;font-weight:700;user-select:none;background:radial-gradient(var(--card),var(--ln));cursor:pointer}
 .cc small{font-size:15px;color:var(--mut)}
 input[type=text],input[type=number]{padding:10px;border-radius:12px;border:1.5px solid var(--ln);background:var(--card);color:var(--ink);font:15px Cairo;width:100%}
 .ad{display:flex;gap:8px;margin-top:8px}.ad .btn{flex:none}
 .days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:10px}
-.days button{padding:8px 0;border-radius:8px;border:1.5px solid var(--ln);background:var(--card);color:var(--ink);font:13px Cairo;position:relative}
+.days button{padding:8px 0;border-radius:8px;border:1.5px solid var(--ln);background:var(--card);color:var(--ink);font:13px Cairo;position:relative;cursor:pointer}
 .days .on{background:var(--gold);color:#222;border-color:var(--gold)}.days i{display:block;font-size:10px;color:var(--ok);font-style:normal}
-.ov{border-radius:50%;width:44px;height:30px;border:2px solid var(--ink);background:none;color:#fff;font-size:16px;flex:none}.ov.on{background:var(--ok);border-color:var(--ok)}
-.x{background:none;border:0;color:var(--no);font-size:16px}
+.ov{border-radius:50%;width:44px;height:30px;border:2px solid var(--ink);background:none;color:#fff;font-size:16px;flex:none;cursor:pointer}.ov.on{background:var(--ok);border-color:var(--ok)}
+.x{background:none;border:0;color:var(--no);font-size:16px;cursor:pointer}
 #toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--hd);color:var(--hdi);border:1px solid var(--gold);padding:10px 18px;border-radius:20px;opacity:0;transition:.3s;pointer-events:none;z-index:99}#toast.on{opacity:1}
 .qw{display:flex;gap:8px}.qm{flex:1;min-width:0}.side{display:flex;flex-direction:column;gap:6px;width:62px}
-.side button{border:1.5px solid var(--gold);background:var(--card);color:var(--ink);border-radius:22px;padding:8px 2px;font:700 10px Cairo;line-height:1.2}.side button span{display:block;font-size:17px}
+.side button{border:1.5px solid var(--gold);background:var(--card);color:var(--ink);border-radius:26px;padding:8px 2px;font:700 10px Cairo;line-height:1.2;cursor:pointer}.side button span{display:block;font-size:17px}.side button.on{background:var(--gold);color:#222}
 .bism{font-family:Amiri,serif;font-size:28px;text-align:center;direction:rtl;margin:6px 0}
-.pdfc{border:2px dashed var(--gold);border-radius:20px;padding:30px 10px;text-align:center;font:700 18px Cairo;margin:12px 0;background:var(--card)}
-.pg{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:8px 0}.pg button{padding:8px 2px;border-radius:10px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font:12px Cairo}
-.sl{max-height:220px;overflow:auto;display:grid;grid-template-columns:1fr 1fr;gap:6px}.sl button{padding:8px;border-radius:10px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font:12px Cairo;text-align:left}
+.pg{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:8px 0}.pg button{padding:8px 2px;border-radius:10px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font:12px Cairo;cursor:pointer}
+.sl{max-height:220px;overflow:auto;display:grid;grid-template-columns:1fr 1fr;gap:6px}.sl button{padding:8px;border-radius:10px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font:12px Cairo;text-align:left;cursor:pointer}
 #rd{position:fixed;inset:0;z-index:50;display:none;flex-direction:column;background:var(--bg);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 #rd .bar{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--hd);color:var(--hdi)}
-#rd .bar button{border:2px solid var(--no);background:none;color:#fff;border-radius:50%;width:42px;height:42px;font:700 12px Cairo}
+#rd .bar button{border:2px solid var(--no);background:none;color:#fff;border-radius:50%;width:42px;height:42px;font:700 12px Cairo;cursor:pointer}
 #rd .bar span{flex:1;text-align:center;font-size:13px;color:var(--gold)}
-#fr{flex:1;min-height:0}#fr iframe{width:100%;height:100%;border:0}
+#fr{flex:1;min-height:0;overflow:hidden}
+#sc{height:100%;overflow:auto;position:relative;-webkit-overflow-scrolling:touch}
 .pb{padding:8px 12px;background:var(--card)}
 .trk{height:26px;border:2px solid #2b4acb;border-radius:14px;position:relative;overflow:hidden;direction:rtl}
 #fill{position:absolute;right:0;top:0;bottom:0;background:#d33 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='26'%3E%3Cpath d='M0 13h8l3-9 4 18 4-14 3 5h18' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E");transition:width .3s}
 .mod{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;z-index:60}.mod>div{background:var(--card);border:2px solid var(--ok);border-radius:20px;padding:22px;text-align:center;max-width:300px}
-.mod .btn{margin:6px}
+.mod .btn{border-radius:45% 55% 50% 50%/60% 50% 50% 40%;border-color:var(--ok);padding:12px 26px;margin:6px}
 .ex{text-align:center;color:var(--mut);font-size:13px;margin:4px}
 .i{flex:none;vertical-align:middle}
-.tile span{display:flex;justify-content:center;color:var(--gold);margin-bottom:8px;font-size:0}
 .hd{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60'%3E%3Cg fill='none' stroke='%23c9a227' stroke-opacity='.4' stroke-width='1.2'%3E%3Cpath d='M10 60V40a14 14 0 0 1 28 0v20M24 26v-8M60 60V30a20 20 0 0 1 40 0v30M80 10v-4M120 60V42a12 12 0 0 1 24 0v20'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat-x;background-position:center bottom}
 .qf{display:flex;gap:8px;border:2px solid var(--ink);border-radius:16px;padding:8px;background:var(--card);margin-bottom:10px}
-.cloudb{margin:10px auto 0;max-width:230px;text-align:center;border:2px solid var(--gold);border-radius:40px;padding:14px;font:700 17px Cairo;color:var(--gold)}
+.cloudb{margin:10px auto 0;max-width:230px;text-align:center;border:2px solid var(--gold);border-radius:40px;padding:14px;font:700 17px Cairo;color:var(--gold);cursor:pointer}
 .arw{text-align:center}
-.pdfb{border:2px solid var(--ink);border-radius:8px;height:92px;background:repeating-linear-gradient(135deg,var(--ink) 0 2px,transparent 2px 7px);display:flex;align-items:flex-end;justify-content:center;margin:4px 0 10px}
+.pdfb{border:2px solid var(--ink);border-radius:8px;height:92px;background:repeating-linear-gradient(135deg,var(--ink) 0 2px,transparent 2px 7px);display:flex;align-items:flex-end;justify-content:center;margin:4px 0 10px;cursor:pointer}
 .pdfb small{background:var(--card);padding:2px 10px;border-radius:8px;margin-bottom:6px}
-.side button{border-radius:26px}.side button.on{background:var(--gold);color:#222}
 .qr{display:flex;justify-content:space-around;border:2px solid var(--gold);border-radius:22px;padding:10px 4px}
-.qr button{background:none;border:0;padding:0}.qr .cur{filter:drop-shadow(0 0 4px var(--gold))}
-.mod .btn{border-radius:45% 55% 50% 50%/60% 50% 50% 40%;border-color:var(--ok);padding:12px 26px}
+.qr button{background:none;border:0;padding:0;cursor:pointer}.qr .cur{filter:drop-shadow(0 0 4px var(--gold))}
 .lgb{display:flex;border:1.5px solid var(--gold);border-radius:18px;overflow:hidden;flex:none}
 .hd .lgb button{width:auto;height:auto;border:0;border-radius:0;padding:6px 8px;font:700 11px Cairo,sans-serif;color:var(--gold);background:none}
 .hd .lgb button.on{background:var(--gold);color:#222}
-.hd h1{font-size:17px}
 html[dir=rtl] .hd>button svg{transform:scaleX(-1)}
 .qf,.qr,.tb{direction:ltr}
-#fr{overflow:hidden}#sc{height:100%;overflow:auto}
-#sc .pp{margin:8px auto;width:var(--w);height:var(--h);background:var(--pbg,#fff);box-shadow:0 1px 6px #0004}
-#sc canvas{mix-blend-mode:multiply}
 .ctl{display:flex;gap:6px;justify-content:space-between;margin-top:6px}.ctl .btn{padding:8px 14px;display:flex;align-items:center}
 #fb{border-color:var(--gold)!important}
-#sc{position:relative}
 #qt{font-family:'Scheherazade New',Amiri,'Traditional Arabic',serif;font-size:26px;line-height:2.3;direction:rtl;text-align:justify;padding:18px 16px;color:#1b1b1b;max-width:760px;margin:0 auto;min-height:100%}
 #qt h1,#qt h2,#qt h3{text-align:center;color:#0f4a3a}#qt img{max-width:100%}
 .su{margin-bottom:16px}#qt .su h2{border:2px solid #c9a227;border-radius:14px;padding:4px;margin:20px 0 8px;font-size:1.05em}
 .bs{text-align:center;margin:6px 0}.vn{color:#b08a12;font-size:.75em}
+#qt.night{background:#0d1526!important;color:#f4e9c4}
+#qt.night .su h2{color:#e6c15a;border-color:#e6c15a}
+#qt.night .vn,#qt.night .bs{color:#e6c15a}
 </style></head><body>
 <div id="app"></div><div id="toast"></div>
 <div id="rd"><div class="bar"><button onclick="askExit()">Esc</button><span>“Auto save in the read page”</span><button id="fb" onclick="fs()"></button><button onclick="exitQuran()" id="xq"></button></div>
@@ -104,14 +99,15 @@ html[dir=rtl] .hd>button svg{transform:scaleX(-1)}
 <div class="ctl"><button class="btn" onclick="mv(-1)" id="bp"></button><button class="btn" onclick="spd(-1)" id="bs1"></button><button class="btn g" onclick="autoTog()" id="bpl"></button><button class="btn" onclick="spd(1)" id="bs2"></button><button class="btn" onclick="mv(1)" id="bn"></button></div><div class="ex" id="spt"></div></div>
 <div class="mod" id="cf"><div><div id="wi"></div><p><b>Are you sure you want exit?</b></p><button class="btn g" onclick="exitRead()">Yes</button><button class="btn" onclick="noExit()">NO</button></div></div></div>
 <script>
-
-/* ====== SETTINGS: where your Quran Word file is (in your GitHub repo) ====== */
-const QURAN_URL='quran.json';   // your Quran file, in the same folder as index.html
+/* ====== SETTINGS: where your Quran JSON file is ====== */
+const QURAN_URL='quran.json';   // in the same folder as index.html
 const QURAN_RAW='';             // OR a full link: https://raw.githubusercontent.com/USER/REPO/main/quran.json
+
 const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,'0');
 const dk=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
 const st={g(k,d){try{const v=localStorage.getItem('sp_'+k);return v?JSON.parse(v):d}catch(e){return d}},s(k,v){try{localStorage.setItem('sp_'+k,JSON.stringify(v))}catch(e){}}};
-const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),1800)};
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2000)};
+
 const IP={sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>',
 moon:'<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>',
 sunrise:'<path d="M12 2v8M4.93 10.93l1.41 1.41M2 18h2M20 18h2M19.07 10.93l-1.41 1.41M22 22H2M8 6l4-4 4 4M16 18a4 4 0 0 0-8 0"/>',
@@ -143,9 +139,9 @@ file:'<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7zM14 2v4
 palette:'<circle cx="13.5" cy="6.5" r=".6"/><circle cx="17.5" cy="10.5" r=".6"/><circle cx="8.5" cy="7.5" r=".6"/><circle cx="6.5" cy="12.5" r=".6"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2z"/>',
 chevdown:'<path d="m7 6 5 5 5-5M7 13l5 5 5-5"/>',play:'<path d="m6 3 14 9-14 9z"/>',pause:'<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>',maximize:'<path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/>',plus:'<path d="M5 12h14M12 5v14"/>','chev-l':'<path d="m15 18-6-6 6-6"/>','chev-r':'<path d="m9 18 6-6-6-6"/>'};
 const ic=(n,z,c)=>`<svg class="i" width="${z||20}" height="${z||20}" viewBox="0 0 24 24" fill="none" stroke="${c||'currentColor'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IP[n]}</svg>`;
-const ics=(n,x,y,z,c)=>`<svg x="${x}" y="${y}" width="${z}" height="${z}" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IP[n]}</svg>`;
 const pie=n=>{const q=['M22 22V4A18 18 0 0 1 40 22Z','M22 22H40A18 18 0 0 1 22 40Z','M22 22V40A18 18 0 0 1 4 22Z','M22 22H4A18 18 0 0 1 22 4Z'];return `<svg width="46" height="46" viewBox="0 0 44 44"><g fill="#d33">${q.slice(0,n).map(d=>`<path d="${d}"/>`).join('')}</g><circle cx="22" cy="22" r="19" fill="none" stroke="#2b4acb" stroke-width="2"/><path d="M22 3v38M3 22h38" stroke="var(--ink)" stroke-width="2"/></svg>`};
-const ROWS=[["Your Space", "Votre espace", "مساحتك"], ["Prayer times, adhkar, tasbih, Quran and your goals — all in one place.", "Horaires de prière, adhkar, tasbih, Coran et vos objectifs — au même endroit.", "مواقيت الصلاة والأذكار والتسبيح والقرآن وأهدافك — في مكان واحد."], ["Start", "Commencer", "ابدأ"], ["Welcome to your space", "Bienvenue dans votre espace", "مرحبًا بك في مساحتك"], ["Prayer time", "Heure de prière", "مواقيت الصلاة"], ["Adkar", "Adhkar", "الأذكار"], ["Adkar after prayer", "Adhkar après la prière", "أذكار بعد الصلاة"], ["Adkar after prayer · 15", "Adhkar après la prière · 15", "أذكار بعد الصلاة · 15"], ["Tasbih", "Tasbih", "التسبيح"], ["Daily", "Quotidien", "يومي"], ["Weekly", "Hebdomadaire", "أسبوعي"], ["Monthly", "Mensuel", "شهري"], ["Quran", "Coran", "القرآن"], ["Your goals", "Vos objectifs", "أهدافك"], ["Hijri / Milad date", "Date hégirienne / grégorienne", "التاريخ الهجري / الميلادي"], ["Casablanca (default)", "Casablanca (par défaut)", "الدار البيضاء (افتراضي)"], ["Your location", "Votre position", "موقعك"], ["Time now", "Heure actuelle", "الوقت الآن"], ["NEXT PRAYER", "PROCHAINE PRIÈRE", "الصلاة القادمة"], ["Fajr", "Fajr (Sobh)", "الفجر"], ["Sunrise", "Lever du soleil", "الشروق"], ["Sunset", "Coucher du soleil", "الغروب"], ["Dhuhr", "Dhuhr", "الظهر"], ["Asr", "Asr", "العصر"], ["Maghrib", "Maghrib", "المغرب"], ["Isha", "Isha", "العشاء"], ["✓ = adhan on · ✕ = adhan off (the tab must stay open)", "✓ = adhan activé · ✕ = adhan désactivé (l’onglet doit rester ouvert)", "✓ = الأذان مفعّل · ✕ = الأذان متوقف (يجب أن تبقى الصفحة مفتوحة)"], ["Morning adkar", "Adhkar du matin", "أذكار الصباح"], ["Night adkar", "Adhkar du soir", "أذكار المساء"], ["Sleep adkar", "Adhkar du coucher", "أذكار النوم"], ["Wake up adkar", "Adhkar du réveil", "أذكار الاستيقاظ"], [" adkar", " adhkar", " أذكار"], ["Done — بارك الله فيك", "Terminé — بارك الله فيك", "تمّ — بارك الله فيك"], ["Restart", "Recommencer", "إعادة"], ["tap to count", "touchez pour compter", "المس للعدّ"], ["Cycle", "Cycles", "الدورات"], ["Pick", "Choisir", "اختيار"], ["Remove", "Retirer", "حذف"], ["New tasbih name", "Nom du nouveau tasbih", "اسم تسبيحة جديدة"], ["Activities", "Activités", "الأنشطة"], ["Daily Activity", "Activité quotidienne", "النشاط اليومي"], ["Weekly Activity", "Activité hebdomadaire", "النشاط الأسبوعي"], ["Monthly Activity", "Activité mensuelle", "النشاط الشهري"], ["click to read", "touchez pour lire", "اضغط للقراءة"], ["Click to read ↗", "Lire ↗", "اضغط للقراءة ↗"], ["Open ↗", "Ouvrir ↗", "فتح ↗"], ["Yasin after Fajr", "Ya-Sin après Fajr", "سورة يس بعد الفجر"], ["Al-Waqi’ah after Duhr", "Al-Waqi’a après Dhuhr", "سورة الواقعة بعد الظهر"], ["Ar-Rahman after Asr", "Ar-Rahman après Asr", "سورة الرحمن بعد العصر"], ["Ad-Dukhan after Maghrib", "Ad-Dukhan après Maghrib", "سورة الدخان بعد المغرب"], ["Al-Mulk after Isha’a", "Al-Mulk après Isha", "سورة الملك بعد العشاء"], ["Friday: Al-Kahf", "Vendredi : Al-Kahf", "الجمعة: سورة الكهف"], ["Al-Baqarah for 1 day a week", "Al-Baqara un jour par semaine", "سورة البقرة يومًا في الأسبوع"], ["1000 tasbih for the Prophet ﷺ", "1000 salawat sur le Prophète ﷺ", "1000 صلاة على النبي ﷺ"], ["Monday fasting?", "Jeûne du lundi ?", "صيام الإثنين؟"], ["Thursday fasting?", "Jeûne du jeudi ?", "صيام الخميس؟"], ["Hijri today:", "Aujourd’hui (hégirien) :", "اليوم الهجري:"], ["did you fast?", "avez-vous jeûné ?", "هل صمت؟"], ["(today)", "(aujourd’hui)", "(اليوم)"], ["Choose one to make plans", "Choisissez-en un pour planifier", "اختر واحدًا لوضع خططك"], ["You want daily goals?", "Vous voulez des objectifs quotidiens ?", "هل تريد أهدافًا يومية؟"], ["You want weekly goals?", "Vous voulez des objectifs hebdomadaires ?", "هل تريد أهدافًا أسبوعية؟"], ["You want monthly goals?", "Vous voulez des objectifs mensuels ?", "هل تريد أهدافًا شهرية؟"], ["Daily goals", "Objectifs quotidiens", "أهداف يومية"], ["Weekly goals", "Objectifs hebdomadaires", "أهداف أسبوعية"], ["Monthly goals", "Objectifs mensuels", "أهداف شهرية"], ["5 habits", "5 habitudes", "5 عادات"], ["Add", "Ajouter", "إضافة"], ["New habit", "Nouvelle habitude", "عادة جديدة"], ["Write goals for this day", "Écrivez vos objectifs du jour", "اكتب أهداف هذا اليوم"], ["New monthly goal", "Nouvel objectif mensuel", "هدف شهري جديد"], ["Day", "Jour", "اليوم"], ["max 10 goals, follow them the whole month", "10 objectifs max, à suivre tout le mois", "10 أهداف كحد أقصى، تابعها طوال الشهر"], ["Max 5 habits", "5 habitudes max", "الحد الأقصى 5 عادات"], ["Max 10 goals", "10 objectifs max", "الحد الأقصى 10 أهداف"], ["PDF format", "format PDF", "بصيغة PDF"], ["Click to read", "Cliquez pour lire", "اضغط للقراءة"], ["Choose your Quran PDF", "Choisissez votre PDF du Coran", "اختر ملف المصحف PDF"], ["Change Quran PDF", "Changer le PDF du Coran", "تغيير ملف المصحف"], ["Search", "Rechercher", "بحث"], ["Juz", "Juz’", "الجزء"], ["Hizb", "Hizb", "الحزب"], ["Page", "Page", "الصفحة"], ["Background", "Arrière-plan", "الخلفية"], ["Surah", "Sourate", "السورة"], ["Auto scroll", "Défilement auto", "تمرير تلقائي"], ["Mode night", "Mode nuit", "الوضع الليلي"], ["Save", "Enregistrer", "حفظ"], ["Share", "Partager", "مشاركة"], ["Full screen", "Plein écran", "ملء الشاشة"], ["Read in full screen", "Lire en plein écran", "القراءة بملء الشاشة"], ["Space", "Espace", "مسافة"], ["Hizb quarters · tap to jump", "Quarts de hizb · touchez pour aller", "أرباع الحزب · اضغط للانتقال"], ["Search a surah…", "Rechercher une sourate…", "ابحث عن سورة…"], ["Hizb pages are approximate.", "Les pages des hizb sont approximatives.", "صفحات الأحزاب تقريبية."], ["Page 1-604", "Page 1-604", "صفحة 1-604"], ["Go", "Aller", "اذهب"], ["Offset", "Décalage", "الإزاحة"], ["Offset = PDF pages before Quran page 1.", "Décalage = pages du PDF avant la page 1 du Coran.", "الإزاحة = عدد صفحات PDF قبل الصفحة 1 من المصحف."], ["Background saved", "Arrière-plan enregistré", "تم حفظ الخلفية"], ["PDF offset saved", "Décalage enregistré", "تم حفظ الإزاحة"], ["Auto scroll ON (line by line, slowly)", "Défilement auto activé (ligne par ligne, lentement)", "التمرير التلقائي مفعّل (سطرًا سطرًا ببطء)"], ["Auto scroll OFF", "Défilement auto désactivé", "التمرير التلقائي متوقف"], ["Night mode ON", "Mode nuit activé", "الوضع الليلي مفعّل"], ["Night mode OFF", "Mode nuit désactivé", "الوضع الليلي متوقف"], ["Saved page", "Page enregistrée", "تم حفظ الصفحة"], ["Copied", "Copié", "تم النسخ"], ["Choose your Quran PDF first", "Choisissez d’abord votre PDF du Coran", "اختر ملف المصحف أولًا"], ["PDF loaded", "PDF chargé", "تم تحميل الملف"], ["Could not store the PDF for next time", "Impossible de mémoriser le PDF", "تعذّر حفظ الملف للمرة القادمة"], ["Could not open this PDF", "Impossible d’ouvrir ce PDF", "تعذّر فتح هذا الملف"], ["“Auto save in the read page”", "« Sauvegarde auto de la page de lecture »", "«حفظ تلقائي لصفحة القراءة»"], ["Scroll speed", "Vitesse de défilement", "سرعة التمرير"], ["Are you sure you want exit?", "Voulez-vous vraiment quitter ?", "هل أنت متأكد أنك تريد الخروج؟"], ["Yes", "Oui", "نعم"], ["NO", "NON", "لا"], ["Esc", "Échap", "Esc"]];
+
+const ROWS=[["Your Space", "Votre espace", "مساحتك"], ["Prayer times, adhkar, tasbih, Quran and your goals — all in one place.", "Horaires de prière, adhkar, tasbih, Coran et vos objectifs — au même endroit.", "مواقيت الصلاة والأذكار والتسبيح والقرآن وأهدافك — في مكان واحد."], ["Start", "Commencer", "ابدأ"], ["Welcome to your space", "Bienvenue dans votre espace", "مرحبًا بك في مساحتك"], ["Prayer time", "Heure de prière", "مواقيت الصلاة"], ["Adkar", "Adhkar", "الأذكار"], ["Adkar after prayer", "Adhkar après la prière", "أذكار بعد الصلاة"], ["Adkar after prayer · 15", "Adhkar après la prière · 15", "أذكار بعد الصلاة · 15"], ["Tasbih", "Tasbih", "التسبيح"], ["Daily", "Quotidien", "يومي"], ["Weekly", "Hebdomadaire", "أسبوعي"], ["Monthly", "Mensuel", "شهري"], ["Quran", "Coran", "القرآن"], ["Your goals", "Vos objectifs", "أهدافك"], ["Hijri / Milad date", "Date hégirienne / grégorienne", "التاريخ الهجري / الميلادي"], ["Casablanca (default)", "Casablanca (par défaut)", "الدار البيضاء (افتراضي)"], ["Your location", "Votre position", "موقعك"], ["Time now", "Heure actuelle", "الوقت الآن"], ["NEXT PRAYER", "PROCHAINE PRIÈRE", "الصلاة القادمة"], ["Fajr", "Fajr (Sobh)", "الفجر"], ["Sunrise", "Lever du soleil", "الشروق"], ["Sunset", "Coucher du soleil", "الغروب"], ["Dhuhr", "Dhuhr", "الظهر"], ["Asr", "Asr", "العصر"], ["Maghrib", "Maghrib", "المغرب"], ["Isha", "Isha", "العشاء"], ["✓ = adhan on · ✕ = adhan off (the tab must stay open)", "✓ = adhan activé · ✕ = adhan désactivé (l’onglet doit rester ouvert)", "✓ = الأذان مفعّل · ✕ = الأذان متوقف (يجب أن تبقى الصفحة مفتوحة)"], ["Morning adkar", "Adhkar du matin", "أذكار الصباح"], ["Night adkar", "Adhkar du soir", "أذكار المساء"], ["Sleep adkar", "Adhkar du coucher", "أذكار النوم"], ["Wake up adkar", "Adhkar du réveil", "أذكار الاستيقاظ"], [" adkar", " adhkar", " أذكار"], ["Done — بارك الله فيك", "Terminé — بارك الله فيك", "تمّ — بارك الله فيك"], ["Restart", "Recommencer", "إعادة"], ["tap to count", "touchez pour compter", "المس للعدّ"], ["Cycle", "Cycles", "الدورات"], ["Pick", "Choisir", "اختيار"], ["Remove", "Retirer", "حذف"], ["New tasbih name", "Nom du nouveau tasbih", "اسم تسبيحة جديدة"], ["Activities", "Activités", "الأنشطة"], ["Daily Activity", "Activité quotidienne", "النشاط اليومي"], ["Weekly Activity", "Activité hebdomadaire", "النشاط الأسبوعي"], ["Monthly Activity", "Activité mensuelle", "النشاط الشهري"], ["click to read", "touchez pour lire", "اضغط للقراءة"], ["Click to read ↗", "Lire ↗", "اضغط للقراءة ↗"], ["Open ↗", "Ouvrir ↗", "فتح ↗"], ["Yasin after Fajr", "Ya-Sin après الفجر", "سورة يس بعد الفجر"], ["Al-Waqi’ah after Duhr", "Al-Waqi’a après Dhuhr", "سورة الواقعة بعد الظهر"], ["Ar-Rahman after Asr", "Ar-Rahman après Asr", "سورة الرحمن بعد العصر"], ["Ad-Dukhan after Maghrib", "Al-Dukhan après Maghrib", "سورة الدخان بعد المغرب"], ["Al-Mulk after Isha’a", "Al-Mulk après Isha", "سورة الملك بعد العشاء"], ["Friday: Al-Kahf", "Vendredi : Al-Kahf", "الجمعة: سورة الكهف"], ["Al-Baqarah for 1 day a week", "Al-Baqara un jour par semaine", "سورة البقرة يومًا في الأسبوع"], ["1000 tasbih for the Prophet ﷺ", "1000 salawat sur le Prophète ﷺ", "1000 صلاة على النبي ﷺ"], ["Monday fasting?", "Jeûne du lundi ?", "صيام الإثنين؟"], ["Thursday fasting?", "Jeûne du jeudi ?", "صيام الخميس؟"], ["Hijri today:", "Aujourd’hui (hégirien) :", "اليوم الهجري:"], ["did you fast?", "avez-vous jeûné ?", "هل صمت؟"], ["(today)", "(aujourd’hui)", "(اليوم)"], ["Choose one to make plans", "Choisissez-en un pour planifier", "اختر واحدًا لوضع خططك"], ["You want daily goals?", "Vous voulez des objectifs quotidiens ?", "هل تريد أهدافًا يومية؟"], ["You want weekly goals?", "Vous voulez des objectifs hebdomadaires ?", "هل تريد أهدافًا أسبوعية؟"], ["You want monthly goals?", "Vous voulez des objectifs mensuels ?", "هل تريد أهدافًا شهرية؟"], ["Daily goals", "Objectifs quotidiens", "أهداف يومية"], ["Weekly goals", "Objectifs hebdomadaires", "أهداف أسبوعية"], ["Monthly goals", "Objectifs mensuels", "أهداف شهرية"], ["5 habits", "5 habitudes", "5 عادات"], ["Add", "Ajouter", "إضافة"], ["New habit", "Nouvelle habitude", "عادة جديدة"], ["Write goals for this day", "Écrivez vos objectifs du jour", "اكتب أهداف هذا اليوم"], ["New monthly goal", "Nouvel objectif mensuel", "هدف شهري جديد"], ["Day", "Jour", "اليوم"], ["max 10 goals, follow them the whole month", "10 objectifs max, à suivre tout le mois", "10 أهداف كحد أقصى، تابعها طوال الشهر"], ["Max 5 habits", "5 habitudes max", "الحد الأقصى 5 عادات"], ["Max 10 goals", "10 objectifs max", "الحد الأقصى 10 أهداف"], ["Click to read", "Cliquez pour lire", "اضغط للقراءة"], ["Search", "Rechercher", "بحث"], ["Juz", "Juz’", "الجزء"], ["Hizb", "Hizb", "الحزب"], ["Page", "Page", "الصفحة"], ["Background", "Arrière-plan", "الخلفية"], ["Surah", "Sourate", "السورة"], ["Auto scroll", "Défilement auto", "تمرير تلقائي"], ["Mode night", "Mode nuit", "الوضع الليلي"], ["Save", "Enregistrer", "حفظ"], ["Share", "Partager", "مشاركة"], ["Full screen", "Plein écran", "ملء الشاشة"], ["Read in full screen", "Lire en plein écran", "القراءة بملء الشاشة"], ["Space", "Espace", "مسافة"], ["Hizb quarters · tap to jump", "Quarts de hizb · touchez pour aller", "أرباع الحزب · اضغط للانتقال"], ["Search a surah…", "Rechercher une sourate…", "ابحث عن سورة…"], ["Hizb pages are approximate.", "Les pages des hizb sont approximatives.", "صفحات الأحزاب تقريبية."], ["Page 1-604", "Page 1-604", "صفحة 1-604"], ["Go", "Aller", "اذهب"], ["Background saved", "Arrière-plan enregistré", "تم حفظ الخلفية"], ["Auto scroll ON (line by line, slowly)", "Défilement auto activé (ligne par ligne, lentement)", "التمرير التلقائي مفعّل (سطرًا سطرًا ببطء)"], ["Auto scroll OFF", "Défilement auto désactivé", "التمرير التلقائي متوقف"], ["Night mode ON", "Mode nuit activé", "الوضع الليلي مفعّل"], ["Night mode OFF", "Mode nuit désactivé", "الوضع الليلي متوقف"], ["Saved page", "Page enregistrée", "تم حفظ الصفحة"], ["Bookmark", "Signet", "العلامة المحفوظة"], ["Copied", "Copié", "تم النسخ"], ["“Auto save in the read page”", "« Sauvegarde auto de la page de lecture »", "«حفظ تلقائي لصفحة القراءة»"], ["Scroll speed", "Vitesse de défilement", "سرعة التمرير"], ["Are you sure you want exit?", "Voulez-vous vraiment quitter ?", "هل أنت متأكد أنك تريد الخروج؟"], ["Yes", "Oui", "نعم"], ["NO", "NON", "لا"], ["Esc", "Échap", "Esc"]];
 const SA=["الفاتحة", "البقرة", "آل عمران", "النساء", "المائدة", "الأنعام", "الأعراف", "الأنفال", "التوبة", "يونس", "هود", "يوسف", "الرعد", "إبراهيم", "الحجر", "النحل", "الإسراء", "الكهف", "مريم", "طه", "الأنبياء", "الحج", "المؤمنون", "النور", "الفرقان", "الشعراء", "النمل", "القصص", "العنكبوت", "الروم", "لقمان", "السجدة", "الأحزاب", "سبأ", "فاطر", "يس", "الصافات", "ص", "الزمر", "غافر", "فصلت", "الشورى", "الزخرف", "الدخان", "الجاثية", "الأحقاف", "محمد", "الفتح", "الحجرات", "ق", "الذاريات", "الطور", "النجم", "القمر", "الرحمن", "الواقعة", "الحديد", "المجادلة", "الحشر", "الممتحنة", "الصف", "الجمعة", "المنافقون", "التغابن", "الطلاق", "التحريم", "الملك", "القلم", "الحاقة", "المعارج", "نوح", "الجن", "المزمل", "المدثر", "القيامة", "الإنسان", "المرسلات", "النبأ", "النازعات", "عبس", "التكوير", "الانفطار", "المطففين", "الانشقاق", "البروج", "الطارق", "الأعلى", "الغاشية", "الفجر", "البلد", "الشمس", "الليل", "الضحى", "الشرح", "التين", "العلق", "القدر", "البينة", "الزلزلة", "العاديات", "القارعة", "التكاثر", "العصر", "الهمزة", "الفيل", "قريش", "الماعون", "الكوثر", "الكافرون", "النصر", "المسد", "الإخلاص", "الفلق", "الناس"];
 const TR={fr:{},ar:{}};ROWS.forEach(r=>{TR.fr[r[0]]=r[1];TR.ar[r[0]]=r[2]});
 const RX=new RegExp('(?<![A-Za-z])('+ROWS.map(r=>r[0]).sort((a,b)=>b.length-a.length).map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')(?![A-Za-z])','g');
@@ -158,6 +154,7 @@ function addLg(){document.querySelectorAll('#app .hd').forEach(h=>{if(!h.querySe
 function setDir(){document.documentElement.dir=LG==='ar'?'rtl':'ltr';document.documentElement.lang=LG}
 function setL(l){LG=l;st.s('lg',l);setDir();document.querySelectorAll('.lgb button').forEach(b=>b.classList.toggle('on',b.textContent.toLowerCase()===l));trT(document.body);if(cur==='prayer'||cur==='quran')go(cur,curA)}
 const MO=new MutationObserver(ms=>{for(const m of ms){if(m.type==='characterData')trN(m.target);else m.addedNodes.forEach(trT)}addLg()});
+
 const star4=(x,y,r)=>`<path d="M${x} ${y-r}l${r*.3} ${r*.7} ${r*.7} ${r*.3}-${r*.7} ${r*.3}-${r*.3} ${r*.7}-${r*.3}-${r*.7}-${r*.7}-${r*.3} ${r*.7}-${r*.3}z" fill="#fff4c2"/>`;
 const GR=(id,a,b)=>`<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`;
 const ray=(cx,cy,a0,a1,n,r0,r1,c)=>{let d='';for(let i=0;i<n;i++){const a=(a0+(a1-a0)*i/(n-1))*Math.PI/180;d+=`M${(cx+r0*Math.cos(a)).toFixed(1)} ${(cy+r0*Math.sin(a)).toFixed(1)}L${(cx+r1*Math.cos(a)).toFixed(1)} ${(cy+r1*Math.sin(a)).toFixed(1)}`}return `<path d="${d}" stroke="${c}" stroke-width="1.8" stroke-linecap="round" fill="none"/>`};
@@ -171,10 +168,11 @@ isha:W(GR('s4','#040a22','#1b2b6b'),`<rect width="48" height="48" fill="url(#s4)
 dhuhr:W(GR('s5','#4fb3ff','#c8ebff')+SUN,`<rect width="48" height="48" fill="url(#s5)"/><circle cx="24" cy="24" r="16" fill="#fff6a0" opacity=".35"/>${ray(24,24,0,330,12,13,19,'#ffd54a')}<circle cx="24" cy="24" r="10" fill="url(#gsn)"/>`),
 asr:W(GR('s6','#5aa4e6','#f6dca0')+SUN,`<rect width="48" height="48" fill="url(#s6)"/>${ray(17,18,0,330,12,10,15,'#ffd54a')}<circle cx="17" cy="18" r="8" fill="url(#gsn)"/><g fill="#fff"><ellipse cx="29" cy="34" rx="12" ry="6"/><circle cx="24" cy="30" r="6"/><circle cx="34" cy="29" r="5"/></g><ellipse cx="29" cy="37" rx="12" ry="3" fill="#dbe7f5"/>`)};
 const ill=(n,z)=>ILL[n](z),ills=(n,x,y,z)=>ILL[n](z).replace('<svg ',`<svg x="${x}" y="${y}" `);
-const hij=d=>{const p=new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{day:'numeric',month:'numeric',year:'numeric'}).formatToParts(d);const g=t=>parseInt(p.find(x=>x.type===t).value);return{d:g('day'),m:g('month'),y:g('year')}};
+
+const hij=d=>{try{const p=new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{day:'numeric',month:'numeric',year:'numeric'}).formatToParts(d);const g=t=>parseInt(p.find(x=>x.type===t).value);return{d:g('day'),m:g('month'),y:g('year')}}catch(e){return{d:d.getDate(),m:d.getMonth()+1,y:d.getFullYear()}}};
 const wk=()=>{const d=new Date();d.setDate(d.getDate()-d.getDay());return dk(d)};
 let DN=st.g('dn',{});
-function tg(k,v,rr){v=v||1;if(DN[k]===v)delete DN[k];else DN[k]=v;st.s('dn',DN);go(cur,curA)}
+function tg(k,v){v=v||1;if(DN[k]===v)delete DN[k];else DN[k]=v;st.s('dn',DN);go(cur,curA)}
 let cur,curA,tickFn,V={};
 function go(v,a){cur=v;curA=a;tickFn=null;const b=document.createElement('div');b.className='view';$('#app').innerHTML='';$('#app').appendChild(b);V[v](b,a);window.scrollTo(0,0)}
 const hd=(t,b)=>'<div class="hd"><button onclick="go(\''+(b||'home')+'\')">'+ic('arrow-left',20)+'</button><h1>'+t+'</h1></div>';
@@ -201,32 +199,34 @@ const PI={Fajr:'fajr',Sunrise:'sunrise',Dhuhr:'dhuhr',Asr:'asr',Maghrib:'sunset'
 let AD=st.g('ad',{});
 function adTog(k){AD[k]=AD[k]===0?1:0;st.s('ad',AD);go('prayer')}
 V.prayer=b=>{
- const P=prayers(new Date()),now=new Date();
+ let now=new Date(),pDay=dk(now),P=prayers(now),hijTxt='';
+ try{hijTxt=new Intl.DateTimeFormat('ar-u-ca-islamic-umalqura',{dateStyle:'long'}).format(now)}catch(e){}
  b.innerHTML=hd('Prayer time')+`<div class="card"><div style="display:flex;justify-content:space-between;font-size:13px"><span>${ic('calendar',14)} ${now.toLocaleDateString(({en:'en-GB',fr:'fr-FR',ar:'ar'})[LG],{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</span></div>
- <div class="ar" style="font-size:20px;margin:0">${new Intl.DateTimeFormat('ar-u-ca-islamic-umalqura',{dateStyle:'long'}).format(now)}</div>
+ <div class="ar" style="font-size:20px;margin:0">${hijTxt}</div>
  <div style="font-size:12px;color:var(--mut);text-align:center">${ic('pin',13)} ${PL.n} · Hijri / Milad date</div>
- <svg viewBox="0 0 320 230" style="width:100%"><ellipse cx="160" cy="112" rx="120" ry="78" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-dasharray="5 4"/><line x1="30" y1="112" x2="290" y2="112" stroke="var(--ln)" stroke-width="2"/>
+ <svg viewBox="0 0 320 230" direction="ltr" style="width:100%"><ellipse cx="160" cy="112" rx="120" ry="78" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-dasharray="5 4"/><line x1="30" y1="112" x2="290" y2="112" stroke="var(--ln)" stroke-width="2"/>
  ${ills('dhuhr',145,0,30)}${ills('isha',146,192,30)}
  <text x="34" y="132" font-size="12" fill="var(--ink)">Sunrise ${ft(P.Sunrise)}</text>${ills('sunrise',26,80,30)}<text x="290" y="132" font-size="12" text-anchor="end" fill="var(--ink)">Sunset ${ft(P.Maghrib)}</text>${ills('sunset',264,80,30)}
  <text x="160" y="96" text-anchor="middle" font-size="12" fill="var(--mut)">Time now</text><text id="clk" x="160" y="122" text-anchor="middle" font-size="26" font-weight="700" fill="var(--ink)"></text>
  <circle id="dot" r="9" fill="#1f8a4c" stroke="#fff" stroke-width="2"/></svg>
  <div class="nx" id="nx"></div></div>
  <div class="card"><table>${['Fajr','Sunrise','Dhuhr','Asr','Maghrib','Isha'].map(k=>`<tr><td style="width:44px;color:var(--gold)">${ill(PI[k],36)}</td><td><b>${k}</b></td><td style="font-weight:700">${ft(P[k])}</td><td>${k==='Sunrise'?'<span class="blk"></span>':`<button class="tg ${AD[k]===0?'off':''}" onclick="adTog('${k}')">${AD[k]===0?ic('x',18):ic('check',18)}</button>`}</td></tr>`).join('')}</table><p class="ex">✓ = adhan on · ✕ = adhan off (the tab must stay open)</p></div>`;
- tickFn=()=>{const n=Date.now(),s=P.Sunrise,m=P.Maghrib;let th;
+ tickFn=()=>{const dt=new Date();if(dk(dt)!==pDay){pDay=dk(dt);P=prayers(dt)}const n=dt.getTime(),s=P.Sunrise,m=P.Maghrib;let th;
   if(n>=s&&n<=m)th=Math.PI*(1-(n-s)/(m-s));else{let a=m,c=s+864e5;if(n<s){a=m-864e5;c=s}th=-Math.PI*Math.min(1,(n-a)/(c-a))}
   const d=$('#dot');if(!d)return;d.setAttribute('cx',160+120*Math.cos(th));d.setAttribute('cy',112-78*Math.sin(th));
-  const dt=new Date();$('#clk').textContent=pad(dt.getHours())+':'+pad(dt.getMinutes())+':'+pad(dt.getSeconds());
+  $('#clk').textContent=pad(dt.getHours())+':'+pad(dt.getMinutes())+':'+pad(dt.getSeconds());
   let nk=null,nt=0;for(const k of['Fajr','Dhuhr','Asr','Maghrib','Isha'])if(P[k]>n){nk=k;nt=P[k];break}
   if(!nk){nk='Fajr';nt=P.Fajr+864e5}const df=Math.floor((nt-n)/1000);
   $('#nx').innerHTML=`NEXT PRAYER<b>${nk}</b><div class="t">${pad(Math.floor(df/3600))}:${pad(Math.floor(df/60)%60)}:${pad(df%60)}</div>`};
  tickFn();
  try{navigator.geolocation.getCurrentPosition(p=>{if(Math.abs(p.coords.latitude-PL.lat)>.05||Math.abs(p.coords.longitude-PL.lng)>.05){PL={lat:p.coords.latitude,lng:p.coords.longitude,n:'Your location'};st.s('loc',PL);if(cur==='prayer')go('prayer')}},()=>{},{timeout:6000})}catch(e){}
 };
+
 /* adhan sound (plays in background while the app is open) */
-let AC;document.addEventListener('click',()=>{try{AC=AC||new AudioContext()}catch(e){}});
-function beep(){if(!AC)return;[392,440,523,440,392,349,392].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+i*.7;o.frequency.value=f;o.connect(g);g.connect(AC.destination);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.25,t+.1);g.gain.exponentialRampToValueAtTime(.0001,t+.65);o.start(t);o.stop(t+.7)})}
+let AC;document.addEventListener('click',()=>{try{AC=AC||new AudioContext();if(AC.state==='suspended')AC.resume()}catch(e){}});
+function beep(){if(!AC)return;if(AC.state==='suspended')AC.resume();[392,440,523,440,392,349,392].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+i*.7;o.frequency.value=f;o.connect(g);g.connect(AC.destination);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.25,t+.1);g.gain.exponentialRampToValueAtTime(.0001,t+.65);o.start(t);o.stop(t+.7)})}
 let AU=null;function adhan(){try{AU=AU||new Audio('adhan.mp3');AU.currentTime=0;AU.play().catch(beep)}catch(e){beep()}}
-let played='';setInterval(()=>{const n=Date.now(),P=prayers(new Date());for(const k of['Fajr','Dhuhr','Asr','Maghrib','Isha']){const id=dk(new Date())+k;if(n>=P[k]&&n<P[k]+60000&&AD[k]!==0&&played!==id){played=id;adhan()}}},1000);
+let played={};setInterval(()=>{const now=new Date(),n=now.getTime(),P=prayers(now);for(const k of['Fajr','Dhuhr','Asr','Maghrib','Isha']){const id=dk(now)+k;if(n>=P[k]&&n<P[k]+60000&&AD[k]!==0&&!played[id]){played[id]=1;adhan()}}},1000);
 
 /* ---------- Adkar ---------- */
 const AK=['آية الكرسي: اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ… وَهُوَ الْعَلِيُّ الْعَظِيمُ',1],
@@ -264,10 +264,10 @@ function tbPick(){const o=[33,100,500,1000,0],i=X.cur,t=TS[i],cu=X.tg[i]!==undef
 function tbAdd(){const v=$('#tn').value.trim();if(!v)return;TS.push({n:v,t:100});st.s('tbl',TS);X.cur=TS.length-1;st.s('tb',X);go('tasbih')}
 
 /* ---------- Activities ---------- */
-const SN=['Al-Fatihah','Al-Baqarah','Aal-Imran','An-Nisa','Al-Ma’idah','Al-An’am','Al-A’raf','Al-Anfal','At-Tawbah','Yunus','Hud','Yusuf','Ar-Ra’d','Ibrahim','Al-Hijr','An-Nahl','Al-Isra','Al-Kahf','Maryam','Ta-Ha','Al-Anbiya','Al-Hajj','Al-Mu’minun','An-Nur','Al-Furqan','Ash-Shu’ara','An-Naml','Al-Qasas','Al-Ankabut','Ar-Rum','Luqman','As-Sajdah','Al-Ahzab','Saba','Fatir','Ya-Sin','As-Saffat','Sad','Az-Zumar','Ghafir','Fussilat','Ash-Shura','Az-Zukhruf','Ad-Dukhan','Al-Jathiyah','Al-Ahqaf','Muhammad','Al-Fath','Al-Hujurat','Qaf','Adh-Dhariyat','At-Tur','An-Najm','Al-Qamar','Ar-Rahman','Al-Waqi’ah','Al-Hadid','Al-Mujadila','Al-Hashr','Al-Mumtahanah','As-Saff','Al-Jumu’ah','Al-Munafiqun','At-Taghabun','At-Talaq','At-Tahrim','Al-Mulk','Al-Qalam','Al-Haqqah','Al-Ma’arij','Nuh','Al-Jinn','Al-Muzzammil','Al-Muddaththir','Al-Qiyamah','Al-Insan','Al-Mursalat','An-Naba','An-Nazi’at','Abasa','At-Takwir','Al-Infitar','Al-Mutaffifin','Al-Inshiqaq','Al-Buruj','At-Tariq','Al-A’la','Al-Ghashiyah','Al-Fajr','Al-Balad','Ash-Shams','Al-Layl','Ad-Duha','Ash-Sharh','At-Tin','Al-Alaq','Al-Qadr','Al-Bayyinah','Az-Zalzalah','Al-Adiyat','Al-Qari’ah','At-Takathur','Al-Asr','Al-Humazah','Al-Fil','Quraysh','Al-Ma’un','Al-Kawthar','Al-Kafirun','An-Nasr','Al-Masad','Al-Ikhlas','Al-Falaq','An-Nas'];
+const SN=['Al-Fatihah','Al-Baqarah','Aal-Imran','An-Nisa','Al-Ma’idah','Al-An’am','Al-A’raf','Al-Anfal','At-Tawbah','Yunus','Hud','Yusuf','Ar-Ra’d','Ibrahim','Al-Hijr','An-Nahl','Al-Isra','Al-Kahf','Maryam','Ta-Ha','Al-Anbiya','Al-Hajj','Al-Mu’minun','An-Nur','Al-Furqan','Ash-Shu’ara','An-Naml','Al-Qasas','Al-Ankabut','Ar-Rum','Luqman','As-Sajdah','Al-Ahzab','Saba','Fatir','Ya-Sin','As-Saffat','Sad','Az-Zumar','Ghafir','Fussilat','Ash-Shura','Az-Zukhruf','Ad-Dukhan','Al-Jathiyah','Al-Ahqaf','Muhammad','Al-Fath','Al-Hujurat','Qaf','Adh-Dhariyat','At-Tur','An-Najm','Al-Qamar','Ar-Rahman','Al-Waqi’ah','Al-Hadid','Al-Mujadila','Al-Hashr','Al-Mumtahanah','As-Saff','Al-Jumu’ah','Al-Munafiqun','At-Taghabun','Al-Talaq','At-Tahrim','Al-Mulk','Al-Qalam','Al-Haqqah','Al-Ma’arij','Nuh','Al-Jinn','Al-Muzzammil','Al-Muddaththir','Al-Qiyamah','Al-Insan','Al-Mursalat','An-Naba','An-Nazi’at','Abasa','At-Takwir','Al-Infitar','Al-Mutaffifin','Al-Inshiqaq','Al-Buruj','At-Tariq','Al-A’la','Al-Ghashiyah','Al-Fajr','Al-Balad','Ash-Shams','Al-Layl','Ad-Duha','Ash-Sharh','At-Tin','Al-Alaq','Al-Qadr','Al-Bayyinah','Az-Zalzalah','Al-Adiyat','Al-Qari’ah','At-Takathur','Al-Asr','Al-Humazah','Al-Fil','Quraysh','Al-Ma’un','Al-Kawthar','Al-Kafirun','An-Nasr','Al-Masad','Al-Ikhlas','Al-Falaq','An-Nas'];
 const SP=[1,2,50,77,106,128,151,177,187,208,221,235,249,255,262,267,282,293,305,312,322,332,342,350,359,367,377,385,396,404,411,415,418,428,434,440,446,453,458,467,477,483,489,496,499,502,507,511,515,518,520,523,526,528,531,534,537,542,545,549,551,553,554,556,558,560,562,564,566,568,570,572,574,575,577,578,580,582,583,585,586,587,587,589,590,591,591,592,593,594,595,595,596,596,597,597,598,598,599,599,600,600,601,601,601,602,602,602,603,603,603,604,604,604];
 const DA=[['Yasin after Fajr',36],['Al-Waqi’ah after Duhr',56],['Ar-Rahman after Asr',55],['Ad-Dukhan after Maghrib',44],['Al-Mulk after Isha’a',67]];
-function readSurah(s){PJ=s;Q.page=SP[s-1];st.s('q',Q);go('quran','read')}
+function readSurah(s){PJ=s;Q.page=SP[s-1]||1;st.s('q',Q);go('quran','read')}
 V.act=(b,tab)=>{tab=tab||'daily';const now=new Date(),h=hij(now),dka=dk(now),wka=wk(),mk=h.y+'-'+h.m;
  const yn=k=>`<button class="yn ${DN[k]==='y'?'y':''}" onclick="tg('${k}','y')">${ic('check',18)}</button><button class="yn ${DN[k]==='n'?'n':''}" onclick="tg('${k}','n')">${ic('x',18)}</button>`;
  const cl=(k)=>`<button class="cloud ${DN[k]?'on':''}" onclick="tg('${k}')">${DN[k]?ic('check',20):''}</button>`;
@@ -284,7 +284,7 @@ V.goals=b=>{b.innerHTML=hd('Your goals')+'<div class="card"><p><b>Choose one to 
 function gadd(k){const v=$('#gi').value.trim();if(!v)return;if(k==='daily'){if(G.daily.length>=5)return toast('Max 5 habits');G.daily.push(v)}
  else if(k==='weekly'){(G.weekly[WD]=G.weekly[WD]||[]).push(v)}else{if(G.monthly.length>=10)return toast('Max 10 goals');G.monthly.push(v)}st.s('goals',G);go('plan',k)}
 function gdel(k,i){if(k==='daily')G.daily.splice(i,1);else if(k==='weekly')G.weekly[WD].splice(i,1);else G.monthly.splice(i,1);st.s('goals',G);go('plan',k)}
-V.plan=(b,k)=>{const n=new Date(),dka=dk(n),mk=n.getFullYear()+'-'+pad(n.getMonth()+1);let list,key;
+V.plan=(b,k)=>{const n=new Date(),dka=dk(n),mk=n.getFullYear()+'-'+pad(n.getMonth()+1);
  const addbar=ph=>`<div class="ad"><input type="text" id="gi" placeholder="${ph}"><button class="btn g" onclick="gadd('${k}')">Add</button></div>`;
  const rows=(arr,kf)=>arr.map((g,i)=>`<div class="row"><div>${g}</div><button class="ov ${DN[kf(i)]?'on':''}" onclick="tg('${kf(i)}')">${DN[kf(i)]?ic('check',16):''}</button><button class="x" onclick="gdel('${k}',${i})">${ic('x',16)}</button></div>`).join('');
  let body='';
@@ -294,62 +294,149 @@ V.plan=(b,k)=>{const n=new Date(),dka=dk(n),mk=n.getFullYear()+'-'+pad(n.getMont
   body=`<div class="days" style="grid-template-columns:repeat(7,1fr)">${cells}</div><p class="ex">Day ${MD} · max 10 goals, follow them the whole month</p>`+rows(G.monthly,i=>'gm:'+mk+':'+MD+':'+i)+addbar('New monthly goal ('+G.monthly.length+'/10)')}
  b.innerHTML=hd(k[0].toUpperCase()+k.slice(1)+' goals','goals')+'<div class="card">'+body+'</div>'};
 
-/* ---------- Quran (PDF reader) ---------- */
-let Q=st.g('q',{page:1,off:0,bg:'#fffbea',night:0,auto:0,mark:0}),PU=1,rdOn=false,aT=null;
-const idb=(m,v)=>new Promise((res,rej)=>{try{const r=indexedDB.open('sp',1);r.onupgradeneeded=()=>r.result.createObjectStore('f');r.onsuccess=()=>{const s=r.result.transaction('f',m==='get'?'readonly':'readwrite').objectStore('f'),q=m==='get'?s.get('pdf'):s.put(v,'pdf');q.onsuccess=()=>res(q.result);q.onerror=rej};r.onerror=rej}catch(e){rej(e)}});
+/* ---------- Quran Reader ---------- */
+let Q=st.g('q',{page:1,off:0,bg:'#fffbea',night:0,auto:0,mark:0}),rdOn=false;
+const idb=(m,v)=>new Promise((res,rej)=>{try{const r=indexedDB.open('sp',1);r.onupgradeneeded=()=>r.result.createObjectStore('f');r.onsuccess=()=>{const s=r.result.transaction('f',m==='get'?'readonly':'readwrite').objectStore('f'),q=m==='get'?s.get('quran'):s.put(v,'quran');q.onsuccess=()=>res(q.result);q.onerror=rej};r.onerror=rej}catch(e){rej(e)}});
 const sv=()=>st.s('q',Q);
 const SB2=[['maximize','Full screen','full'],['search','Search','search'],['layers','Juz','juz'],['pie','Hizb','hizb'],['file','Page','page'],['palette','Background','bg'],['book','Surah','surah'],['chevdown','Auto scroll','auto'],['moon','Mode night','night'],['bookmark','Save','save'],['share','Share','share']];
 function qrt(i){const h0=Math.floor((Q.page-1)*60/604);jump(Math.round(1+(h0+i/4)*604/60))}
-V.quran=async(b,a)=>{
- if(!PU){try{const f=await idb('get');if(f){PB=f;PU=1}}catch(e){}}
+
+V.quran=(b,a)=>{
  const h=(Q.page-1)*60/604,qi=Math.floor((h%1)*4),pc=Math.round(Q.page/604*100);
- b.innerHTML=`<div class="hd"><button onclick="go('home')">${ic('arrow-right',20)}</button><h1>Quran</h1></div>
+ b.innerHTML=hd('Quran')+`
  <div class="qf"><div class="qm"><div class="bism">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div><div id="qp"></div>
- <div class="cloudb">Click to read<br>Quran</div><div class="arw">${ic('arrow-down',34,'var(--gold)')}</div>
+ <div class="cloudb" onclick="readStart()">Click to read<br>Quran</div><div class="arw">${ic('arrow-down',34,'var(--gold)')}</div>
  <div class="pdfb" onclick="readStart()"><small>Page ${Q.page} · ${pc}% · Space</small></div>
+ ${Q.mark?`<div style="text-align:center;margin-bottom:8px"><button class="chip on" onclick="jump(${Q.mark});readStart()">${ic('bookmark',14)} Bookmark: Page ${Q.mark}</button></div>`:''}
  <button class="btn g" style="width:100%;margin-bottom:8px;display:flex;justify-content:center;gap:8px;align-items:center" onclick="readStart(true)">${ic('maximize',18)} Read in full screen</button>
  </div>
  <div class="side">${SB2.map(x=>`<button class="${(x[2]==='auto'&&Q.auto)||(x[2]==='night'&&Q.night)?'on':''}" onclick="qP('${x[2]}')">${ic(x[0],20)}<br>${x[1]}</button>`).join('')}</div></div>
  <div class="chips" style="border:2px solid var(--ink);border-radius:20px;padding:6px">${SN.map((s,i)=>i+1).reverse().map(n=>`<button class="chip" onclick="readSurah(${n})">${n}</button>`).join('')}</div>
  <div class="qr">${[4,3,2,1].map((n,i)=>`<button class="${i===qi?'cur':''}" onclick="qrt(${i})">${pie(n)}</button>`).join('')}</div><p class="ex">Hizb quarters · tap to jump</p>`;
- if(a==='read')readStart()};
-function pickPdf(i){const f=i.files[0];if(!f)return;PB=f;PU=1;PD=null;idb('put',f).catch(()=>toast('Could not store the PDF for next time'));toast('PDF loaded');go('quran')}
-function jump(p){Q.page=Math.max(1,Math.min(604,p));sv();if(rdOn)goPage(Q.page+Q.off,true);else go('quran')}
+ if(a==='read')readStart();
+};
+
+function jump(p){Q.page=Math.max(1,Math.min(604,p||1));sv();if(rdOn)goPage(Q.page,true);else go('quran')}
 function qP(k){const q=$('#qp');let h='';
  if(k==='juz')h='<div class="pg">'+Array.from({length:30},(_,i)=>`<button onclick="jump(${i?i*20+2:1})">${i+1}</button>`).join('')+'</div>';
  if(k==='hizb')h='<div class="pg">'+Array.from({length:60},(_,i)=>`<button onclick="jump(${Math.round(1+i*603/60)})">${i+1}</button>`).join('')+'</div><p class="ex">Hizb pages are approximate.</p>';
  if(k==='surah'||k==='search')h=(k==='search'?'<input type="text" placeholder="Search a surah…" oninput="sf(this.value)">':'')+'<div class="sl" id="sl">'+SN.map((s,i)=>`<button data-n="${(s+' '+SA[i]).toLowerCase()}" onclick="readSurah(${i+1})">${i+1}. ${LG==='ar'?SA[i]:s}</button>`).join('')+'</div>';
  if(k==='page')h=`<div class="ad"><input type="number" id="pn" min="1" max="604" placeholder="Page 1-604" value="${Q.page}"><button class="btn g" onclick="jump(+$('#pn').value)">Go</button></div>`;
- if(k==='bg')h='<div class="pg">'+['#fffbea','#ffffff','#e8f3e8','#f1e4c8','#dfe9f5'].map(c=>`<button style="background:${c};height:34px" onclick="Q.bg='${c}';sv();toast('Background saved')"></button>`).join('')+'</div>';
+ if(k==='bg')h='<div class="pg">'+['#fffbea','#ffffff','#e8f3e8','#f1e4c8','#dfe9f5'].map(c=>`<button style="background:${c};height:34px;border:${Q.bg===c?'2.5px solid var(--gold)':'1px solid var(--ln)'}" onclick="Q.bg='${c}';sv();toast('Background saved');qP('bg')"></button>`).join('')+'</div>';
  if(k==='auto'){Q.auto=Q.auto?0:1;sv();toast(Q.auto?'Auto scroll ON (line by line, slowly)':'Auto scroll OFF');go('quran')}
  if(k==='night'){Q.night=Q.night?0:1;sv();toast(Q.night?'Night mode ON':'Night mode OFF');go('quran')}
- if(k==='save'){Q.mark=Q.page;sv();toast('Saved page '+Q.page)}
+ if(k==='save'){Q.mark=Q.page;sv();toast('Saved page '+Q.page);go('quran')}
  if(k==='share'){const t='I’m reading the Quran — page '+Q.page;try{navigator.share?navigator.share({text:t}):navigator.clipboard.writeText(t).then(()=>toast('Copied'))}catch(e){toast(t)}}
  if(k==='full')readStart(true);q.innerHTML=h}
 function sf(v){v=v.toLowerCase();document.querySelectorAll('#sl button').forEach(b=>b.style.display=b.dataset.n.includes(v)||b.textContent.includes(v)?'':'none')}
+
 let QH=null,SURS=[],PJ=0,AS=0,AR=0,fsMode=false,sI=st.g('spi',2),svT=null;
 const SPS=[10,20,30,45,65],SC=()=>$('#sc');
-async function loadQ(){if(QH)return QH;const r=await fetch(QURAN_RAW||QURAN_URL);if(!r.ok)throw new Error(r.status);const d=await r.json(),dg=n=>String(n).replace(/\d/g,x=>'٠١٢٣٤٥٦٧٨٩'[x]);
- QH=d.map(s=>`<section class="su"><h2>سورة ${s.name}</h2>${s.b?'<div class="bs">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>':''}<p>${s.v.map((v,i)=>v+' <span class="vn">﴿'+dg(i+1)+'﴾</span>').join(' ')}</p></section>`).join('');return QH}
-async function frame(){const f=$('#fr');f.style.background=Q.bg;
- f.innerHTML='<div id="sc"'+(Q.night?' style="filter:invert(1) hue-rotate(180deg)"':'')+'><div id="qt" style="background:'+Q.bg+'"><p style="text-align:center;direction:ltr">…</p></div></div>';
- try{await loadQ()}catch(e){const q=$('#qt');if(q)q.innerHTML='<p style="direction:ltr;text-align:center;font:15px Cairo,sans-serif">تعذّر تحميل ملف القرآن · Impossible de charger le fichier · Could not load the Quran file<br><b>'+(QURAN_RAW||QURAN_URL)+'</b></p>';return}
- const sc=SC();if(!sc)return;$('#qt').innerHTML=QH;SURS=[...$('#qt').querySelectorAll('.su')];
- sc.onscroll=onSc;sc.addEventListener('touchstart',stopAuto,{passive:true});
- if(PJ)sc.scrollTop=SURS[PJ-1].offsetTop-8;else goPage(Q.page,false);PJ=0;prog()}
+const dg=n=>String(n).replace(/\d/g,x=>'٠١٢٣٤٥٦٧٨٩'[x]);
+function renderQData(d){
+ if(!Array.isArray(d)||!d.length)throw new Error('Invalid quran.json');
+ QH=d.map((s,idx)=>{
+  const sn=s.n||(idx+1);
+  const vs=Array.isArray(s.v)?s.v:[];
+  return `<section class="su" data-n="${sn}"><h2>سورة ${s.name||SA[sn-1]||sn}</h2>${s.b?'<div class="bs">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>':''}<p>${vs.map((v,i)=>v+' <span class="vn">﴿'+dg(i+1)+'﴾</span>').join(' ')}</p></section>`;
+ }).join('');
+ return QH;
+}
+async function loadQ(){
+ if(QH)return QH;
+ try{
+  const r=await fetch(QURAN_RAW||QURAN_URL);
+  if(!r.ok)throw new Error(r.status);
+  const d=await r.json();
+  return renderQData(d);
+ }catch(e){
+  const cached=await idb('get').catch(()=>null);
+  if(cached){
+   const d=typeof cached==='string'?JSON.parse(cached):cached;
+   return renderQData(d);
+  }
+  throw e;
+ }
+}
+async function pickQuran(inp){
+ const f=inp.files&&inp.files[0];
+ if(!f)return;
+ try{
+  const txt=await f.text();
+  const d=JSON.parse(txt);
+  renderQData(d);
+  await idb('put',txt).catch(()=>{});
+  toast('Quran loaded');
+  frame();
+ }catch(e){
+  toast('Invalid quran.json file');
+ }
+}
+async function frame(){
+ const f=$('#fr');
+ const bg=Q.night?'#0d1526':Q.bg;
+ f.style.background=bg;
+ f.innerHTML=`<div id="sc"><div id="qt" class="${Q.night?'night':''}" style="background:${bg}"><p style="text-align:center;direction:ltr">…</p></div></div>`;
+ try{
+  await loadQ();
+ }catch(e){
+  const q=$('#qt');
+  if(q)q.innerHTML=`<div style="direction:ltr;text-align:center;font:15px Cairo,sans-serif;padding:24px 10px">
+   <p>تعذّر تحميل ملف القرآن · Impossible de charger le fichier · Could not load <b>${QURAN_RAW||QURAN_URL}</b></p>
+   <label class="btn g" style="margin-top:8px">Select quran.json<input type="file" accept=".json,application/json" style="display:none" onchange="pickQuran(this)"></label>
+  </div>`;
+  return;
+ }
+ const sc=SC();if(!sc)return;
+ $('#qt').innerHTML=QH;
+ SURS=[...$('#qt').querySelectorAll('.su')];
+ sc.onscroll=onSc;
+ sc.addEventListener('touchstart',stopAuto,{passive:true});
+ if(PJ){
+  const el=$('#qt').querySelector(`.su[data-n="${PJ}"]`)||SURS[PJ-1];
+  if(el)sc.scrollTop=Math.max(0,el.offsetTop-8);
+  else toast('Surah '+PJ+' not in quran.json');
+ }else goPage(Q.page,false);
+ PJ=0;prog();
+ if(Q.auto)setTimeout(autoStart,600);
+}
 const offs=()=>SURS.map(e=>e.offsetTop);
-function pgOf(){const sc=SC(),o=offs(),y=sc.scrollTop+40;let i=0;while(i<113&&o[i+1]<=y)i++;const end=i<113?o[i+1]:$('#qt').offsetHeight,f=Math.min(1,Math.max(0,(y-o[i])/Math.max(1,end-o[i]))),a=SP[i],b=i<113?SP[i+1]:605;return Math.max(1,Math.min(604,Math.round(a+f*(b-a))))}
-function goPage(n,sm){const sc=SC();if(!sc||!SURS.length)return;n=Math.max(1,Math.min(604,n));let i=0;while(i<113&&SP[i+1]<=n)i++;const o=offs(),end=i<113?o[i+1]:$('#qt').offsetHeight,a=SP[i],b=i<113?SP[i+1]:605;sc.scrollTo({top:o[i]+(n-a)/Math.max(1,b-a)*(end-o[i])-8,behavior:sm?'smooth':'auto'})}
+function pgOf(){
+ const sc=SC(),o=offs();
+ if(!sc||!SURS.length)return Q.page;
+ const y=sc.scrollTop+40,last=SURS.length-1;
+ let i=0;while(i<last&&o[i+1]<=y)i++;
+ const end=i<last?o[i+1]:$('#qt').offsetHeight;
+ const f=Math.min(1,Math.max(0,(y-o[i])/Math.max(1,end-o[i])));
+ const sn=+(SURS[i].dataset.n||i+1);
+ const a=SP[sn-1]||1,b=sn<114?SP[sn]:605;
+ return Math.max(1,Math.min(604,Math.round(a+f*(b-a))));
+}
+function goPage(n,sm){
+ const sc=SC();if(!sc||!SURS.length)return;
+ n=Math.max(1,Math.min(604,n));
+ const o=offs(),last=SURS.length-1;
+ let i=0;
+ while(i<last){
+  const nextSn=+(SURS[i+1].dataset.n||i+2);
+  if((SP[nextSn-1]||605)<=n)i++;else break;
+ }
+ const end=i<last?o[i+1]:$('#qt').offsetHeight;
+ const sn=+(SURS[i].dataset.n||i+1);
+ const a=SP[sn-1]||1,b=sn<114?SP[sn]:605;
+ const ratio=Math.min(1,Math.max(0,(n-a)/Math.max(1,b-a)));
+ sc.scrollTo({top:Math.max(0,o[i]+ratio*(end-o[i])-8),behavior:sm?'smooth':'auto'});
+}
 function onSc(){const sc=SC();if(!sc||!SURS.length)return;const q=pgOf();if(q!==Q.page){Q.page=q;clearTimeout(svT);svT=setTimeout(sv,800)}prog()}
 function prog(){const pct=Math.round(Q.page/604*100),f=$('#fill');if(f)f.style.width=pct+'%';const t=$('#pgt');if(t)t.textContent='Page '+Q.page+' · '+pct+'%'}
 const bpl=()=>{const b=$('#bpl');if(b)b.innerHTML=ic(AS?'pause':'play',20)};
-function autoStart(){const sc=SC();if(!sc)return;stopAuto();AS=1;let l=performance.now(),pos=sc.scrollTop,ls=pos;const f=t=>{if(!AS)return;const dt=Math.min(.1,(t-l)/1000);l=t;if(Math.abs(sc.scrollTop-ls)>3)pos=sc.scrollTop;pos+=SPS[sI]*dt;sc.scrollTop=pos;ls=sc.scrollTop;if(ls>=sc.scrollHeight-sc.clientHeight-1){stopAuto();return}AR=requestAnimationFrame(f)};AR=requestAnimationFrame(f);bpl()}
+function autoStart(){const sc=SC();if(!sc||sc.scrollHeight<=sc.clientHeight+2)return;stopAuto();AS=1;let l=performance.now(),pos=sc.scrollTop,ls=pos;const f=t=>{if(!AS)return;const dt=Math.min(.1,(t-l)/1000);l=t;if(Math.abs(sc.scrollTop-ls)>3)pos=sc.scrollTop;pos+=SPS[sI]*dt;sc.scrollTop=pos;ls=sc.scrollTop;if(ls>=sc.scrollHeight-sc.clientHeight-1){stopAuto();return}AR=requestAnimationFrame(f)};AR=requestAnimationFrame(f);bpl()}
 function stopAuto(){AS=0;cancelAnimationFrame(AR);bpl()}
 const autoTog=()=>AS?stopAuto():autoStart();
 function spd(d){sI=Math.max(0,Math.min(4,sI+d));st.s('spi',sI);$('#spt').textContent='Scroll speed '+(sI+1)+'/5'}
-function readStart(full){rdOn=true;$('#rd').style.display='flex';if(full)fs();frame().then(()=>{if(Q.auto)setTimeout(autoStart,900)});spd(0)}
+function readStart(full){rdOn=true;$('#rd').style.display='flex';if(full)fs();frame();spd(0)}
 function mv(d){const sc=SC();if(sc)sc.scrollBy({top:d*sc.clientHeight*.9,behavior:'smooth'})}
-function fs(){fsMode=true;const e=$('#rd');try{(e.requestFullscreen||e.webkitRequestFullscreen).call(e)}catch(x){}}
+function fs(){const e=$('#rd'),req=e.requestFullscreen||e.webkitRequestFullscreen;if(!req)return;try{const p=req.call(e);if(p&&p.then)p.then(()=>{fsMode=true}).catch(()=>{fsMode=false});else fsMode=true}catch(x){fsMode=false}}
 function leaveFs(){fsMode=false;try{if(document.fullscreenElement)document.exitFullscreen()}catch(e){}}
 function askExit(){$('#cf').style.display='flex'}
 function noExit(){$('#cf').style.display='none';if(fsMode&&!document.fullscreenElement)fs()}
